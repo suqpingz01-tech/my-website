@@ -1,0 +1,86 @@
+body{
+    background-color: rgba(10, 10, 10, 0.952);
+}
+
+.page{
+    max-width:1400px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap:20px;
+}
+
+.video{
+    min-height:500px;
+    background:#333;
+    border-radius:10px;
+}
+
+.sidebar{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.name{
+    background:#333;
+    padding:20px;
+    border-radius:10px;
+}
+
+.download{
+    background:#4d5fff;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:20px;
+    border-radius:10px;
+}
+
+.description{
+    grid-column:1 / -1; /* กินทั้งแถว */
+
+    background:#333;
+    min-height:300px;
+    padding:20px;
+    border-radius:10px;
+}
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:10px;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-area img{
+    width:50px;
+    height:50px;
+}
+header h1{
+    margin:0;
+}
+a{
+    text-decoration:none;
+}
+h1{
+    font-style: italic;
+    font-family:'Poppins',sans-serif;
+    color: white;
+}
+h2{
+    font-family:'Poppins',sans-serif;
+    color: white;
+}
+p{
+    font-size: 20px;
+    font-family:'Poppins',sans-serif;
+    color: white;
+}

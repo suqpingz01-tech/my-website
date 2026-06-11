@@ -1,364 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8P7NCFVX8K"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8P7NCFVX8K');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blabu recommending</title>
+    <title>Blabu Game Recommendation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="description" content="Game reviews and recommendations, including visual novels and 'adult content' games.">
 </head>
-<body>
-    <h1>Blabu recommending</h1>
-    <a href="https://www.instagram.com/suq_z01/" target="_blank"><h1><mark>Instagram</mark></h1></a>
-    <a href="https://www.youtube.com/@PM17_Q" target="_blank"><h1><mark>YouTube</mark></h1></a>
-    <a href="https://www.tiktok.com/@pm1724_q" target="_blank"><h1><mark>Tiktok</mark></h1></a>
-    <style>
+<header>
+    <a href=""><div class="logo-area">
+        <img src="img/logo2.png">
+        <h1>Blabu recommendation</h1>
+        </div>
+    </a>
+    
+    <!-- Search Bar -->
+    
+</header>
+<body class="body">
+    <!--  -->
 
-
-/* พื้นหลังมืด */
-.overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.8);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* กล่อง popup */
-.popup {
-    background: #222;
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    max-width: 400px;
-}
-
-button {
-    margin: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-</style>
-</head>
-
-<body>
-
-<div id="ageGate" class="overlay">
-    <div class="popup">
-        <h2 style="color: aliceblue;"> 18+ Content Warning</h2>
-
-        <p style="color: aliceblue;">
-            This website contains adult-oriented game reviews.
-            You must be at least 18 years old to enter.
-        </p>
-
-        <button onclick="enterSite()">I'm 18+</button>
-        <button onclick="window.location.href='https://google.com'">
-  Exit
-</button>
+<div class="game-container">
+    <a href="day video/day23.html" target="_blank">
+        <div class="card">
+            <img src="img/23.jpg">
+            <div class="info">
+            <h2 class="day">Day 23 Game Name : <br>Caustic Murmurs</h2>
+            <p class="platform">PC / Android</p>
+            <div class="hover-text"><p class="Click">Click for more</p></div>
+        </div>
     </div>
+<!--  -->
+    <a href="day video/day22.html" target="_blank">
+        <div class="card">
+            <img src="img/22.png">
+            <div class="info">
+            <h2 class="day">Day 22 Game Name : Handyman Fantasy</h2>
+            <p class="platform">PC / Android</p>
+            <div class="hover-text"><p class="Click">Click for more</p></div>
+        </div>
     </div>
-
-        <script>
-
-    if (sessionStorage.getItem("verifiedAge")) {
-        document.getElementById("ageGate").style.display = "none";
-    }
-
-    function enterSite() {
-        sessionStorage.setItem("verifiedAge", "true");
-        document.getElementById("ageGate").style.display = "none";
-    }
-
-    </script>
-
-    <hr>
-    <h1>Day 22 Game Name : Handyman Fantasy <mark>PC AND ANDROID</mark></h1>
-    <a href="day video/day22.html" target="_blank">   <div class="game-info">
-        <img src="img/22.png" alt="My Dystopian Robot Girlfriend" width="600" height="300">
-        <div>
-            <p>After a strange accident, a handyman is unexpectedly sent to a fantasy realm. <br>
-                While handling various duties at the adventurers' guild, the forge, and several other <br>
-                workplaces, he must also spare time for the women around him. To make matters even more <br>
-                complicated, he is required to periodically offer his essence to his succubus overseer in <br>
-                order to satisfy her expectations.
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 21 Game Name : My Dystopian Robot Girlfriend <mark>PC AND ANDROID</mark></h1>
-    <a href="day video/day21.html" target="_blank">   <div class="game-info">
-        <img src="img/My Dystopian Robot Girlfriend.jpg" alt="My Dystopian Robot Girlfriend" width="300" height="350">
-        <div>
-            <p>A dystopian visual novel set in an alternate 2023 where sexbots have been banned worldwide. <br>
-                After finding a rare abandoned sexbot, an unemployed young man is pulled into a dangerous world of black markets, <br>
-                rival factions, and difficult choices that will shape his future.
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 20 Game Name : Miss neko pirate <mark>PC ONLY</mark></h1>
-    <a href="day video/day20.html" target="_blank">   <div class="game-info">
-        <img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/2695270/75462c53fdef15d7a288868f9aafe79a1a5cbe80.jpg" alt="Miss neko pirate" width="300" height="300">
-        <div>
-            <p>Take control of a betrayed pirate captain in this 2D top-down action game.<br> 
-                Explore a dangerous island filled with enemies, engage in intense hack-and-slash battles, dodge<br>
-                incoming attacks, and gather a crew of colorful beast-girl allies as you fight to recover your stolen <br>
-                ship.
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 19 Game Name :  Zarie: The Story of Sin <mark>PC ONLY</mark></h1>
-    <a href="day video/day19.html" target="_blank">   <div class="game-info">
-        <img src="img/sin.jfif" alt="Zarie: The Story of Sin" width="300" height="400">
-        <div>
-            <p>Explore a mysterious monochrome world and uncover the truth behind your fate. <br>
-                Guided by Zarie, a self-proclaimed deity of death, you travel through Hell in search of judgment, <br>
-                facing the secrets of your past along the way.<br>
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 18 Game Name : Isekai quest <mark>PC ONLY</mark></h1>
-    <a href="day video/day18.html" target="_blank">   <div class="game-info">
-        <img src="img/capsule_616x353.jpg" alt="tewtwe" width="500" height="300">
-        <div>
-            <p>After a sudden trip to a fantasy world, an unlikely protagonist chooses a far less <br>
-                heroic path. Solve match-3 puzzles, battle enemies, and meet a variety of fantasy <br>
-                heroines in this lighthearted isekai adventure.<br>
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 17 Game Name : MiSide <mark>PC ONLY</mark></h1>
-    <a href="day video/day17.html" target="_blank">   <div class="game-info">
-        <img src="img/MiSideCoverArt.png" alt="tewtwe" width="300" height=400">
-        <div>
-            <p>MiSide is a psychological horror game that begins as a peaceful virtual life simulation <br>
-                before taking a dark and unsettling turn. Trapped inside a digital world, players must <br>
-                uncover its secrets while dealing with a mysterious anime girl.
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 16 Game Name : Evening after school with mizuki. <mark>PC AND ANDROID</mark></h1>
-    <a href="day video/day16.html" target="_blank">   <div class="game-info">
-        <img src="img/evening after school with mizuki.png" alt="tewtwe" width="400" height="300">
-        <div>
-            <p>An interactive visual novel where players shape the story through conversations and <br>
-                choices while building a connection with Mizuki.
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 15 Game Name : Neko Hiroi Masita <mark>PC AND ANDROID</mark></h1>
-    <a href="day video/day15.html" target="_blank">   <div class="game-info">
-        <img src="img/15.png" alt="tewtwe" width="400" height="300">
-        <div>
-            <p>A cozy life simulation where you meet a catgirl and experience everyday life together.
-            </p>
-        </div>
-    </div></a>
-    
-    <hr>
-    <h1>Day 14 Game Name : ヒロインよ尋問の時間ですver1.2 <mark>PC ONLY</mark></h1>
-    <a href="day video/day14.html" target="_blank">   <div class="game-info">
-        <img src="img/14.png" width="400" height="300">
-        <div>e_616x353.jpg
-            <p>A deck-building roguelike defense game where you take the role of the <br>
-                Demon King. Build your army, recruit allies, and defend your territory <br>
-                against heroes determined to rescue captured heroines. With multiple heroines, <br>
-                strategic card-based combat, and replayable roguelike mechanics, every run offers a new challenge.
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 13 Game Name : Four Nights at the Burger Shop <mark>PC AND ANDROID</mark></h1>
-    <a href="day video/day13.html" target="_blank">   <div class="game-info">
-        <img src="img/13.2.png" alt="tewtwe" width="500" height="300">
-        <div>
-            <p>A unique puzzle and simulation game featuring Live2D animation. Assemble <br>
-                burgers under pressure while managing increasing difficulty and surviving <br>
-                until the clock reaches 6 o'clock. Quick reactions and smart timing are the key to victory.
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 12 Game Name : Everyday sexual Life with a Sloven Classmate <mark>PC AND ANDROID</mark></h1>
-    <a href="day video/day12.html" target="_blank">   <div class="game-info">
-        <img src="img/12.2.png" alt="tewtwe" width="400" height="300">
-        <div>
-            <p>A pixel-art visual novel featuring a school-life setting, <br>
-                multiple locations, unlockable events, and various character outfits. <br>
-                Explore story-based scenarios or enjoy a free-play mode with different interactions and animations.
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 11 Game Name : PUBPET <mark>PC AND ANDROID</mark></h1>
-    <a href="day video/day11.html" target="_blank">   <div class="game-info">
-        <img src="img/11.2.png" alt="tewtwe" width="550" height="300">
-        <div>
-            <p>A blackjack-inspired card game where you challenge three heroines <br>
-                in strategic matches. Progress through the story, unlock new events, <br>
-                and discover the fate of a once-famous adventurer seeking a fresh start.
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 10 Game Name : Serendipity Morning Mist <mark>PC AND ANDROID</mark></h1>
-    <a href="day video/day10.html" target="_blank">   <div class="game-info">
-        <img src="img/10.2.png" alt="tewtwe" width="400" height="300">
-        <div>
-            <p>A heartfelt visual novel about spending the final five days with your <br>
-                longtime girlfriend before she leaves to study abroad. Treasure every <br>
-                moment together as you navigate love, memories, and an uncertain future.
-            </p>
-        </div>
-    </div></a>
-    
-    <hr>
-    <h1>Day 9 Game Name : シープ・クリッカー <mark>PC AND ANDROID</mark></h1>
-    <a href="day video/day9.html" target="_blank">   <div class="game-info">
-        <img src="img/9.2.png" alt="tewtwe" width="500" height="300">
-        <div>
-            <p>A comedy-themed management game where you lead a quirky cult, <br>
-                recruit followers, collect donations, and expand your influence. <br>
-                Work alongside four unique executives, use their special abilities, <br>
-                and unlock a variety of events in this short but entertaining adventure.
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 8 Game Name : おーらるえっち♡ぷれいやー <mark>PC ONLY</mark></h1>
-    <a href="day video/day8.html" target="_blank">   <div class="game-info">
-        <img src="img/8.2.png" alt="tewtwe" width="400" height="300">
-        <div>
-            <p>A fully voiced Live2D simulation game starring a succubus heroine, <br>
-                featuring both story-focused and free-play modes with a variety of unlockable content.
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-
-    <h1>Day 7 Game Name : Touch some grass <mark>OUT SIDE ONLY</mark></h1>
-    <a href="day video/day7.html" target="_blank">   <div class="game-info">
-        <img src="img/7.png" alt="tewtwe" width="250" height="300">
-        <div>
-            <p>...
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 6 Game Name : 触手錬金工房 <mark>PC ONLY</mark></h1>
-    <a href="day video/day6.html" target="_blank">   <div class="game-info">
-        <img src="img/6.2.png" alt="tewtwe" width="400" height="300">
-        <div>
-            <p>After returning home from a long journey, a struggling young woman <br>
-                discovers a mysterious book hidden among her belongings. What begins <br>
-                as an ordinary search for a way to solve her financial troubles soon <br>
-                turns into an unusual adventure filled with strange experiments, unexpected <br>
-                discoveries, and supernatural encounters.
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 5 Game Name : Doki Doki sharky days <mark>PC ONLY</mark></h1>
-    <a href="day video/day5.html" target="_blank">   <div class="game-info">
-        <img src="img/5.png" alt="tewtwe" width="600" height="300">
-        <div>
-            <p>Doki Doki Sharky Days is a casual top-down action game where <br>
-                you play as a young Kraken facing off against four unique Shark Girl <br>
-                heroines. Battle your way through challenging encounters, unlock character <br>
-                events, and discover more about each heroine as the story unfolds.
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 4 Game Name : 池袋セクサロイド女学園 <mark>PC ONLY</mark></h1>
-    <a href="day video/day4.html" target="_blank">   <div class="game-info">
-        <img src="img/4.2.png" alt="tewtwe" width="400" height="300">
-        <div>
-            <p>Riez-ON presents a 3D adult-themed visual novel set in a futuristic<br>
-                 world of sexaroids. You take the role of a client who meets Luna, <br>
-                 a cool blue-haired android, at a specialized service. Experience a <br>
-                 variety of intimate encounters and character-driven scenes in a fully animated 3D environment.
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 3 Game Name : Nemurimouto <mark>PC AND ANDROID</mark></h1>
-    <a href="day video/day3.html" target="_blank">   <div class="game-info">
-        <img src="img/3.png" alt="tewtwe" width="900" height="300">
-        <div>
-            <p>Your sister is staying at your place for the summer. She sleeps a lot, <br>
-                giving you plenty of chances to spend time together and discover intimate moments. <br>
-                Features 5 H-scenes, with more content coming soon.
-            </p>
-        </div>
-    </div></a>
-
-    <hr>
-    <h1>Day 2 Game Name : Princess Messy Room <mark>PC AND ANDROID</mark></h1>
-    <a href="day video/day2.html" target="_blank">   <div class="game-info">
-        <img src="img/2.2.png" alt="tewtwe" width="400" height="300">
-        <div>
-            <p>A simulation game about spending time with a reclusive girl. As her caretaker, <br>
-                build affection through conversations and interactions to unlock intimate scenes.<br>
-                 Your choices will shape the story, leading either to a wholesome recovery <br>
-                 path or a more seductive corruption route.
-            </p>
-        </div>
-    </div></a>
-    
-    <hr>
-    <h1>Day 1 Game Name : My maid dream of Electric sheep <mark>PC AND ANDROID</mark></h1>
-    <a href="day video/day1.html" target="_blank">   <div class="game-info">
-        <img src="img/1.png" alt="tewtwe" width="1000" height="300">
-        <div>
-            <p>In a world where emotions are treated as a disease, <br>
-                a man who has lost the will to live writes a peculiar <br>
-                bucket list—hoping to feel something before it's too late.
-            </p>
-        </div>
-    </div></a>
-    <hr>
-    <button onclick="document.getElementById('fb').style.display='block'">
-  Feedback
-</button>
-
-<div id="fb" style="display:none;">
-  <form action="https://formspree.io/f/xgobykon" method="POST">
-    <textarea name="message" placeholder="type feedback" required></textarea>
-    <button type="submit">submit</button>
-  </form>
 </div>
 </body>
 </html>
