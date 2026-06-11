@@ -21,6 +21,45 @@
     
 </header>
 <body class="body">
+
+    <!-- 18+ Popup -->
+    <div id="age-popup" class="popup">
+        <div class="popup-content">
+            <h2>🔞 18+ Warning</h2>
+
+            <p>
+                This website contains content intended for adults only.<br>
+                You must be at least 18 years old to enter.<br><br>
+
+                By proceeding, you confirm that you are of legal age
+                in your jurisdiction and agree to view adult content.
+            </p>
+
+            <div class="popup-buttons">
+                <button onclick="acceptAge()">I am 18 or older</button>
+                <button onclick="leaveSite()">Leave Website</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const popup = document.getElementById("age-popup");
+
+        // ถ้าเคยกดยืนยันแล้วในแท็บนี้
+        if (sessionStorage.getItem("ageVerified")) {
+            popup.style.display = "none";
+        }
+
+        function acceptAge() {
+            sessionStorage.setItem("ageVerified", "true");
+            popup.style.display = "none";
+        }
+
+        function leaveSite() {
+            window.location.href = "https://google.com";
+        }
+    </script>
+
     <!--  -->
 
 <div class="game-container">
