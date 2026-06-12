@@ -19,28 +19,103 @@
     
     <!-- Search Bar -->
 </header>
+<script src="https://www.youtube.com/iframe_api"></script>
 <body>
+
 <div class="page">
-
+<!-- วิดีโอ -->
     <div class="video">
-    <iframe width="1000" height="500" src="https://www.youtube.com/embed/Vi7Sj-4K-8c?si=I6H75I_Oynf2TWmj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<!-- ภาพหน้าปก -->
+    <div class="slide active">
+        <img src="../img/23.jpg" alt="Cover">
     </div>
+<!-- อย่าลืมใส่ id="ytplayer" + ?enablejsapi=1 ใส่ ?enablejsapi=1 ตรงจุดเริ่มต้นของ src ? ท้ายๆ -->
+    <div class="slide">
+        <iframe id="ytplayer" width="1000" height="500" src="https://www.youtube.com/embed/Vi7Sj-4K-8c?enablejsapi=1"
+         title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+    </div>
+<!-- ภาพอื่นๆเพิ่มเติม -->
+    <div class="slide">
+        <img src="../img/23.jpg" alt="Screenshot">
+    </div>
+<!-- ปุ่ม -->
+    <button id="prev">❮</button>
+    <button id="next">❯</button>
+<!-- จุด -->
+<div class="dots">
+    <span class="dot active-dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
 
+</div>
+<!-- ชื่อวัน -->
     <div class="sidebar">
         <div class="name">
             <h2>Day 23: Caustic Murmurs</h2>
         </div>
-
+<!-- ปุ่มโหลด -->
         <a href="https://pachipoi.itch.io/caustic-murmurs" target="_blank" class="download">
             <h3>Download</h3>
         </a>
     </div>
-
+<!-- คำอธิบาย -->
     <div class="description">
-        <p>Caustic Murmurs is a Yuri visual novel that explores themes of grief, isolation, and heartfelt affection. Follow the development of a meaningful relationship as hidden truths gradually come to light and long-buried mysteries begin to unfold.
+        <p>Caustic Murmurs is a Yuri visual novel that explores themes of grief, isolation, 
+            and heartfelt affection. Follow the development of a meaningful relationship as 
+            hidden truths gradually come to light and long-buried mysteries begin to unfold.
 
         </p>
     </div>
+<!-- เลื่อน จุด หยุดวิดีโอ -->
+<script>
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+
+let current = 0;
+let player;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('ytplayer');
+}
+function showSlide(index){
+
+    if(player){
+        player.pauseVideo();
+    }
+
+    slides.forEach(slide=>{
+        slide.classList.remove('active');
+    });
+
+    dots.forEach(dot=>{
+        dot.classList.remove('active-dot');
+    });
+
+    slides[index].classList.add('active');
+
+    if(dots[index]){
+        dots[index].classList.add('active-dot');
+    }
+}
+
+document.getElementById('next').onclick = () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+};
+
+document.getElementById('prev').onclick = () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+};
+
+function onYouTubeIframeAPIReady() {
+    console.log("YT Loaded");
+    player = new YT.Player('ytplayer');
+}
+</script>
 
 </div>
 </body>

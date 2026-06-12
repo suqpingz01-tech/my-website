@@ -22,10 +22,10 @@ h1{
     color:#bdbdbd;
 }
 .card:hover{
-    background:rgb(63, 63, 63);
+    background:rgb(38, 30, 61);
     transition:0.5s;
     transform:scale(1.03);
-    box-shadow:0 0 20px rgba(255,255,255,0.3);
+    box-shadow:0 0 20px rgb(57, 7, 207);
 }
 .card img{
     width:100%;
