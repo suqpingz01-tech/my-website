@@ -112,3 +112,9 @@ header h1{
 .warn{
     font-size: 25px;
 }
+
+.fan-made{
+    font-style: italic;
+    font-family:'Poppins',sans-serif;
+    color: white;
+}
