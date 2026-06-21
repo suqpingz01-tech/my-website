@@ -169,3 +169,43 @@ p{
 .active-dot{
     background:white;
 }
+@media (max-width: 768px){
+
+    .page{
+        grid-template-columns: 1fr;
+    }
+
+    .description{
+        grid-column:auto;
+    }
+
+}
+@media (max-width:768px){
+
+    .slide img,
+    .slide iframe{
+        height:300px;
+    }
+
+}
+
+
+@media (max-width:768px){
+
+    .page{
+        grid-template-columns:1fr;
+    }
+
+    .video{
+        min-height:300px; /* ไม่เอา 500 */
+    }
+
+}
+
+h1{
+    font-style: italic;
+    font-family:'Poppins',sans-serif;
+    color:white;
+
+    font-size:clamp(1.4rem,5vw,2.5rem);
+}
