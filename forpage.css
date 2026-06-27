@@ -204,8 +204,9 @@ p{
 
 h1{
     font-style: italic;
+
     font-family:'Poppins',sans-serif;
     color:white;
 
-    font-size:clamp(1.4rem,5vw,2.5rem);
+    font-size:clamp(1.3rem,4.5vw,2.2rem);
 }
