@@ -26,9 +26,9 @@ h1{
     color:#bdbdbd;
 }
 .card:hover{
-    background:rgb(38, 30, 61);
+    background:rgb(61, 30, 30);
     transform:scale(1.03);
-    box-shadow:0 0 20px rgb(57, 7, 207);
+    box-shadow:0 0 20px rgb(207, 7, 7);
 }
 .card img {
     width: 100%;
