@@ -71,7 +71,27 @@
     </script>
 
     <!--  -->
+<section class="hero">
 
+    <img id="hero-img" class="hero-image">
+
+    <div class="hero-overlay">
+
+        <span class="today-tag">🎮 TODAY'S PICK</span>
+
+        <h2 id="hero-day"></h2>
+
+        <h1 id="hero-title"></h1>
+
+        <a id="hero-link" class="play-btn" target="_blank">
+            Play Now →
+        </a>
+
+    </div>
+
+</section>
+    
+    
 <div class="game-container">
 <!--  -->
        <a href="day video/day13.html" target="_blank">
@@ -282,5 +302,26 @@
         <h1 class="recom">X</h1>
         </div>
 </a>
+
+<script>
+
+const latestCard = document.querySelector(".game-container a");
+
+const img = latestCard.querySelector("img").src;
+
+const title = latestCard.querySelector(".day").innerHTML.split("<br>");
+
+const link = latestCard.href;
+
+document.getElementById("hero-img").src = img;
+
+document.getElementById("hero-day").textContent = title[0];
+
+document.getElementById("hero-title").textContent = title[1];
+
+document.getElementById("hero-link").href = link;
+
+</script>
+
 </body>
 </html>
