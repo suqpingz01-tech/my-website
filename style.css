@@ -55,8 +55,14 @@ a{
     text-decoration:none;
 }
 
-.body{
-    background-color: rgba(10, 10, 10, 0.952);
+body {
+    background: linear-gradient(
+        to bottom,
+        #252525 0%,
+        #1b1b1b 25%,
+        #171717 60%,
+        #121212 100%
+    );
 }
 header{
     display:flex;
