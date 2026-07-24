@@ -19,6 +19,7 @@
   gtag('config', 'G-8P7NCFVX8K');
 </script>
 </head>
+<body class="body">
 <header>
     <a href="index.html"><div class="logo-area">
         <img src="lo12.png">
@@ -29,8 +30,25 @@
     <!-- Search Bar -->
     
 </header>
-<body class="body">
-    
+
+<div class="section">
+  <div class="section-header">
+    <div class="title">
+    <span class="icon"></span>
+      🎮 Popular Picks
+    </div>
+    <div class="nav-btns">
+      <button class="nav-btn" id="prevBtn" aria-label="ย้อนกลับ">&#10094;</button>
+      <button class="nav-btn" id="nextBtn" aria-label="ถัดไป">&#10095;</button>
+    </div>
+  </div>
+
+  <div class="carousel-viewport">
+    <div class="carousel-track" id="track">
+      <!-- การ์ดจะถูกสร้างด้วย JS -->
+    </div>
+  </div>
+</div>
 
     <!-- 18+ Popup -->
     <div id="age-popup" class="popup">
@@ -52,46 +70,7 @@
         </div>
     </div>
 
-    <script>
-        const popup = document.getElementById("age-popup");
 
-        // ถ้าเคยกดยืนยันแล้วในแท็บนี้
-        if (sessionStorage.getItem("ageVerified")) {
-            popup.style.display = "none";
-        }
-
-        function acceptAge() {
-            sessionStorage.setItem("ageVerified", "true");
-            popup.style.display = "none";
-        }
-
-        function leaveSite() {
-            window.location.href = "https://google.com";
-        }
-    </script>
-
-    <!--  -->
-<section class="hero">
-
-    <img id="hero-img" class="hero-image">
-
-    <div class="hero-overlay">
-
-        <span class="today-tag">🎮 TODAY'S PICK</span>
-
-        <h2 id="hero-day"></h2>
-
-        <h1 id="hero-title"></h1>
-
-        <a id="hero-link" class="play-btn" target="_blank">
-            Play Now →
-        </a>
-
-    </div>
-
-</section>
-    
-    
 <div class="game-container">
 <!--  -->
        <a href="day video/day13.html" target="_blank">
@@ -303,25 +282,8 @@
         </div>
 </a>
 
-<script>
-
-const latestCard = document.querySelector(".game-container a");
-
-const img = latestCard.querySelector("img").src;
-
-const title = latestCard.querySelector(".day").innerHTML.split("<br>");
-
-const link = latestCard.href;
-
-document.getElementById("hero-img").src = img;
-
-document.getElementById("hero-day").textContent = title[0];
-
-document.getElementById("hero-title").textContent = title[1];
-
-document.getElementById("hero-link").href = link;
-
-</script>
+<script src="carousel.js"></script>
+<script src="age.js"></script>
 
 </body>
 </html>
