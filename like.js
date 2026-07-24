@@ -17,8 +17,6 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 
-// อ่านชื่อเกมจากชื่อไฟล์
-// day13.html = day13
 const gameID = window.location.pathname
     .split("/")
     .pop()
@@ -26,7 +24,6 @@ const gameID = window.location.pathname
 
 
 const likeKey = "liked_" + gameID;
-
 const likeRef = ref(db, "games/" + gameID + "/likes");
 
 const likeBtn = document.getElementById("like-btn");
@@ -34,9 +31,10 @@ const likeCount = document.getElementById("like-count");
 
 
 let likes = 0;
+let loaded = false; // กันกดก่อนโหลดเสร็จ
 
 
-// โหลดจำนวน Like จาก Firebase
+// โหลดจำนวน Like
 get(likeRef).then((snapshot) => {
 
     if (snapshot.exists()) {
@@ -44,6 +42,8 @@ get(likeRef).then((snapshot) => {
     }
 
     likeCount.innerHTML = likes;
+
+    loaded = true; // โหลดเสร็จแล้ว
 
     updateButton();
 
@@ -70,10 +70,16 @@ function updateButton(){
 likeBtn.addEventListener("click",()=>{
 
 
+    // กันกดตอน Firebase ยังโหลดไม่เสร็จ
+    if(!loaded){
+        return;
+    }
+
+
     if(localStorage.getItem(likeKey)){
 
         // Unlike
-        likes--;
+        likes = Math.max(likes - 1, 0);
 
         localStorage.removeItem(likeKey);
 
@@ -88,15 +94,12 @@ likeBtn.addEventListener("click",()=>{
     }
 
 
-    // อัปเดตหน้าเว็บ
     likeCount.innerHTML = likes;
 
 
-    // อัปเดต Firebase
     set(likeRef, likes);
 
 
-    // อัปเดตปุ่ม
     updateButton();
 
 });
