@@ -1,11 +1,11 @@
   // ---- 1. ข้อมูลการ์ด (แทนที่ด้วยข้อมูลจริงของคุณ / ดึงจาก API ก็ได้) ----
   const games = [
-    { img: "img/13.2.png", title: "Four Nights at the Burger Shop",  views: "1.4k", tag: "🔥 Most Popular", href: "day video/day13.html" , font: "'Poppins', sans-serif", color: "white"},
-    { img: "img/13.2.png",title: "Four Nights at the Burger Shop",     views: "1.4k", tag: "🔥 Trending Now",  href: "day video/day13.html" , font: "'Poppins', sans-serif", color: "white"},
-    { img: "img/13.2.png",title: "Four Nights at the Burger Shop",          views: "1.4k", tag: "🚀 Most downloaded",       href: "day video/day13.html" , font: "'Poppins', sans-serif", color: "white"},
+    { img: "img/13.png", title: "Four Nights at the Burger Shop",  views: "1.4k", tag: "🔥 Most Popular", href: "day video/day13.html" , font: "'Poppins', sans-serif", color: "white"},
+    { img: "img/13.png",title: "Four Nights at the Burger Shop",     views: "1.4k", tag: "🔥 Trending Now",  href: "day video/day13.html" , font: "'Poppins', sans-serif", color: "white"},
+    { img: "img/13.png",title: "Four Nights at the Burger Shop",          views: "1.4k", tag: "🚀 Most downloaded",       href: "day video/day13.html" , font: "'Poppins', sans-serif", color: "white"},
     { img: "img/1.png",title: "My maid dream of Electric sheep",        views: "753", tag: "🎯 Staff Picks", href: "day video/day1.html" , font: "'Poppins', sans-serif", color: "white"},
-    { img: "img/13.2.png",title: "Four Nights at the Burger Shop",      views: "1.4k", tag: "❤️ Most Liked",       href: "day video/day13.html" , font: "'Poppins', sans-serif", color: "white"},
-    { img: "img/13.2.png",title: "Four Nights at the Burger Shop",       views: "1.4k", tag: "👁 Most Viewed",  href: "day video/day13.html" , font: "'Poppins', sans-serif", color: "white"},
+    { img: "img/13.png",title: "Four Nights at the Burger Shop",      views: "1.4k", tag: "❤️ Most Liked",       href: "day video/day13.html" , font: "'Poppins', sans-serif", color: "white"},
+    { img: "img/13.png",title: "Four Nights at the Burger Shop",       views: "1.4k", tag: "👁 Most Viewed",  href: "day video/day13.html" , font: "'Poppins', sans-serif", color: "white"},
   ];
 
   // ---- 2. สร้างการ์ดแต่ละใบ ----

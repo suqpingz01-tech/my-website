@@ -41,11 +41,11 @@
     </div>
 <!-- อย่าลืมใส่ id="ytplayer" + ?enablejsapi=1 ใส่ ?enablejsapi=1 ตรงจุดเริ่มต้นของ src ? ท้ายๆ -->
     <div class="slide">
-        
+        <img src="../slide/16.1.png" alt="Screenshot" width="1000" height="500">
     </div>
 <!-- ภาพอื่นๆเพิ่มเติม -->
     <div class="slide">
-        <img src="../img/16.jpg" alt="Screenshot" width="1000" height="500">
+        <img src="../slide/16.2.png" alt="Screenshot" width="1000" height="500">
     </div>
 <!-- ปุ่ม -->
     <button id="prev">❮</button>
@@ -84,50 +84,71 @@
     </div>
 <!-- เลื่อน จุด หยุดวิดีโอ -->
 <script>
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-
 let current = 0;
 let player;
 
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('ytplayer');
+function getSlides() {
+    return document.querySelectorAll('.slide');
 }
-function showSlide(index){
+function getDots() {
+    return document.querySelectorAll('.dot');
+}
 
-    if(player){
+function showSlide(index){
+    const slides = getSlides();
+    const dots = getDots();
+
+    if(!slides.length) return;
+
+    // วนกลับไปต้น/ท้ายถ้าเกินขอบ
+    current = (index + slides.length) % slides.length;
+
+    if(player && typeof player.pauseVideo === 'function'){
         player.pauseVideo();
     }
 
-    slides.forEach(slide=>{
-        slide.classList.remove('active');
-    });
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active-dot'));
 
-    dots.forEach(dot=>{
-        dot.classList.remove('active-dot');
-    });
+    slides[current].classList.add('active');
+    if(dots[current]) dots[current].classList.add('active-dot');
+}
 
-    slides[index].classList.add('active');
+// ใช้ event delegation ที่ document แทนการ bind ตรงๆ ที่ปุ่ม
+// -> ทำงานได้แม้ปุ่มจะถูกแทรกเข้ามาทีหลัง (AJAX/SPA) ไม่ต้องรอ F5
+document.addEventListener('click', function(e){
+    if(e.target && e.target.id === 'next'){
+        showSlide(current + 1);
+    }
+    if(e.target && e.target.id === 'prev'){
+        showSlide(current - 1);
+    }
+});
 
-    if(dots[index]){
-        dots[index].classList.add('active-dot');
+// สร้าง YouTube player อัตโนมัติเมื่อ element #ytplayer โผล่ขึ้นมาในหน้า
+// (รองรับทั้งกรณีโหลดตอนแรก และกรณีแทรกเข้ามาทีหลัง)
+let ytApiReady = false;
+
+function onYouTubeIframeAPIReady() {
+    ytApiReady = true;
+    tryInitPlayer();
+}
+
+function tryInitPlayer() {
+    const el = document.getElementById('ytplayer');
+    if(ytApiReady && el && !player){
+        player = new YT.Player('ytplayer');
     }
 }
 
-document.getElementById('next').onclick = () => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-};
+// เฝ้าดู DOM เผื่อ #ytplayer ถูกแทรกเข้ามาทีหลัง
+const observer = new MutationObserver(() => {
+    tryInitPlayer();
+});
+observer.observe(document.body, { childList: true, subtree: true });
 
-document.getElementById('prev').onclick = () => {
-    current = (current - 1 + slides.length) % slides.length;
-    showSlide(current);
-};
-
-function onYouTubeIframeAPIReady() {
-    console.log("YT Loaded");
-    player = new YT.Player('ytplayer');
-}
+// เผื่อกรณีหน้าโหลดตอนแรกและ element มีอยู่แล้ว
+tryInitPlayer();
 </script>
 
 </div>
