@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day17</title>
+    <title>ラストスタンド～姦獄のリベレーター～</title>
     <link rel="stylesheet" href="../forpage.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,15 +37,15 @@
     <div class="video">
 <!-- ภาพหน้าปก -->
     <div class="slide active">
-        <img src="../img/17.jpg" alt="Cover">
+        <img src="../img/17.png" alt="Cover">
     </div>
 <!-- อย่าลืมใส่ id="ytplayer" + ?enablejsapi=1 ใส่ ?enablejsapi=1 ตรงจุดเริ่มต้นของ src ? ท้ายๆ -->
     <div class="slide">
-        
+        <img src="../slide/17.2.png" alt="Screenshot" width="1000" height="500">
     </div>
 <!-- ภาพอื่นๆเพิ่มเติม -->
     <div class="slide">
-        <img src="../img/17.jpg" alt="Screenshot" width="1000" height="500">
+        <img src="../slide/17.1.png" alt="Screenshot" width="1000" height="500">
     </div>
 <!-- ปุ่ม -->
     <button id="prev">❮</button>
@@ -61,76 +61,96 @@
 <!-- ชื่อวัน -->
     <div class="sidebar">
         <div class="name">
-            <h2>Day 17: MiSide</h2>
+            <h2>Day 17: ラストスタンド～姦獄のリベレーター～</h2>
         </div>
+    <button id="like-btn">
+❤️ Like <span id="like-count">0</span>
+</button>
+<script src="../like.js" type="module"></script>
 <!-- ปุ่มโหลด -->
-        <a href="https://aihasto.itch.io/miside" target="_blank" class="download"
+        <a href="https://www.dlsite.com/maniax/work/=/product_id/RJ01497368.html/?locale=en_US" target="_blank" class="download"
         onclick="gtag('event', 'official_download_click', {
-   'game_name': 'MiSide'
-});">
-            <h3>Official Download (demo)</h3>
-        </a>
-        <a href="https://store.steampowered.com/app/2527500/MiSide/" target="_blank" class="download"
-        onclick="gtag('event', 'official_download_click', {
-   'game_name': 'MiSide'
+   'game_name': 'ラストスタンド～姦獄のリベレーター～'
 });">
             <h3>Official Download</h3>
         </a>
+
     </div>
+
 <!-- คำอธิบาย -->
     <div class="description">
-        <p>MiSide is a psychological horror game that begins as a peaceful virtual life simulation
-                before taking a dark and unsettling turn. Trapped inside a digital world, players must
-                uncover its secrets while dealing with a mysterious anime girl.
+        <p>An action roguelite. Escape from the prison where you are held captive.
+Enjoy accessible gameplay with simple controls. Make full use of randomly acquired weapons and items to aim for your escape. Survive for 20 days and await rescue.
 
         </p>
     </div>
 <!-- เลื่อน จุด หยุดวิดีโอ -->
 <script>
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-
 let current = 0;
 let player;
 
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('ytplayer');
+function getSlides() {
+    return document.querySelectorAll('.slide');
 }
-function showSlide(index){
+function getDots() {
+    return document.querySelectorAll('.dot');
+}
 
-    if(player){
+function showSlide(index){
+    const slides = getSlides();
+    const dots = getDots();
+
+    if(!slides.length) return;
+
+    // วนกลับไปต้น/ท้ายถ้าเกินขอบ
+    current = (index + slides.length) % slides.length;
+
+    if(player && typeof player.pauseVideo === 'function'){
         player.pauseVideo();
     }
 
-    slides.forEach(slide=>{
-        slide.classList.remove('active');
-    });
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active-dot'));
 
-    dots.forEach(dot=>{
-        dot.classList.remove('active-dot');
-    });
+    slides[current].classList.add('active');
+    if(dots[current]) dots[current].classList.add('active-dot');
+}
 
-    slides[index].classList.add('active');
+// ใช้ event delegation ที่ document แทนการ bind ตรงๆ ที่ปุ่ม
+// -> ทำงานได้แม้ปุ่มจะถูกแทรกเข้ามาทีหลัง (AJAX/SPA) ไม่ต้องรอ F5
+document.addEventListener('click', function(e){
+    if(e.target && e.target.id === 'next'){
+        showSlide(current + 1);
+    }
+    if(e.target && e.target.id === 'prev'){
+        showSlide(current - 1);
+    }
+});
 
-    if(dots[index]){
-        dots[index].classList.add('active-dot');
+// สร้าง YouTube player อัตโนมัติเมื่อ element #ytplayer โผล่ขึ้นมาในหน้า
+// (รองรับทั้งกรณีโหลดตอนแรก และกรณีแทรกเข้ามาทีหลัง)
+let ytApiReady = false;
+
+function onYouTubeIframeAPIReady() {
+    ytApiReady = true;
+    tryInitPlayer();
+}
+
+function tryInitPlayer() {
+    const el = document.getElementById('ytplayer');
+    if(ytApiReady && el && !player){
+        player = new YT.Player('ytplayer');
     }
 }
 
-document.getElementById('next').onclick = () => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-};
+// เฝ้าดู DOM เผื่อ #ytplayer ถูกแทรกเข้ามาทีหลัง
+const observer = new MutationObserver(() => {
+    tryInitPlayer();
+});
+observer.observe(document.body, { childList: true, subtree: true });
 
-document.getElementById('prev').onclick = () => {
-    current = (current - 1 + slides.length) % slides.length;
-    showSlide(current);
-};
-
-function onYouTubeIframeAPIReady() {
-    console.log("YT Loaded");
-    player = new YT.Player('ytplayer');
-}
+// เผื่อกรณีหน้าโหลดตอนแรกและ element มีอยู่แล้ว
+tryInitPlayer();
 </script>
 
 </div>
